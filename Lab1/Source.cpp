@@ -6,27 +6,44 @@ using namespace std;
 
 int convertToInt(char number[50])
 {
+    bool isNegative = false;
 
     int sum = 0;
-    for (int i = 0; number[i] != '\0'; i++)
+
+    if (number[0] == '-')
+        isNegative = true;
+    if (isNegative)
     {
-        sum *= 10;
-        sum += number[i] - '0';
+        for (int i = 1; number[i+1] != '\0'; i++)
+        {
+            sum *= 10;
+            sum += number[i] - '0';
+        }
+        return -sum;
     }
-    return sum;
+    else
+    {
+        for (int i = 0; number[i] != '\0'; i++)
+        {
+            sum *= 10;
+            sum += number[i] - '0';
+        }
+        return sum;
+    } 
 }
 
 int main()
 {
     int sum = 0;
 
-    FILE* in = fopen("in.txt", "r");
+    FILE* in = fopen("ini.txt", "r");
 
 
     while (!feof(in))
     {
         char number[50];
-        fscanf(in, "%s", number);
+        if (fscanf(in, "%s", number) == NULL)
+            exit(EXIT_FAILURE);
 
         sum += convertToInt(number);
         number[0] = '\0';
