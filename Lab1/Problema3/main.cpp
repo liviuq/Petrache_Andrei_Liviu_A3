@@ -36,7 +36,7 @@ int main(int argc, char** argv)
 						strcpy(tableOfWords[i], tableOfWords[j]);
 						strcpy(tableOfWords[j], temp);
 					}
-	for (int i = counter-1; i >= 0; i--)
+	for (int i = 0; i < counter; i++)
 		printf("%s\n", tableOfWords[i]);
 	return 0;
 }
