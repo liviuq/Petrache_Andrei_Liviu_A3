@@ -35,25 +35,23 @@ bool NumberList::Insert(int position, int value)
 		{
 			numbers[i] = numbers[i - 1];
 		}
+		numbers[position-1] = value;
 		count++;
-		numbers[position] = value;
 		return true;
 	}
 }
 
-bool NumberList::Remove(int position)
+void NumberList::Remove(int position)
 {
 	if (position < 0 || position > 10)
 	{
 		std::cout << "Cannot remove the number from the list! Abort." << std::endl;
-		return false;
 	}
 	for (int i = position; i < count; i++)
 	{
-		numbers[i] = numbers[i+1];
+		numbers[i-1] = numbers[i];
 	}
-	return true;
-
+	count--;
 }
 
 void NumberList::Sort()
@@ -70,7 +68,7 @@ void NumberList::Sort()
 
 void NumberList::Print()
 {
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < count; i++)
 		std::cout << numbers[i] << " ";
 	std::cout << std::endl;
 }

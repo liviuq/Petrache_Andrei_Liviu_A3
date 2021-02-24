@@ -7,12 +7,11 @@ int main(int argc, char** argv)
 	NumberList l;
 
 	l.Init();
-	l.Add(5);
+	l.Add(11);
+	l.Add(14);
+	l.Insert(3, 15);
 	l.Print();
-	l.Insert(5, 44);
-	l.Print();
-	l.Add(6);
-	l.Insert(9, 100);
+	l.Remove(3);
 	l.Print();
 	return 0;
 }
