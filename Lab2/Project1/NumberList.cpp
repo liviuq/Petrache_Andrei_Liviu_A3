@@ -31,7 +31,7 @@ bool NumberList::Insert(int position, int value)
 	}
 	else
 	{
-		for (int i = count; i > position; i--)
+		for (int i = count; i >= position; i--)
 		{
 			numbers[i] = numbers[i - 1];
 		}
