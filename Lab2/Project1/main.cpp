@@ -13,5 +13,8 @@ int main(int argc, char** argv)
 	l.Print();
 	l.Remove(3);
 	l.Print();
+	l.Insert(1, 99);
+	l.Insert(1, 88);
+	l.Print();
 	return 0;
 }
