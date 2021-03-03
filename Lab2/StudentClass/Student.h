@@ -2,13 +2,13 @@
 class Student
 {
 private:
-	char* name;
+	mutable char* name;
 	float MathGrade;
 	float EnglishGrade;
 	float HistoryGrade;
 
 public:
-	const char* GetStudentName() const;
+	char* const GetStudentName() const;
 	void SetStudentName(const char* name);
 
 	float getMathGrade() const;

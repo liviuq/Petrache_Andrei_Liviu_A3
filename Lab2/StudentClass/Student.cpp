@@ -2,8 +2,9 @@
 #include <iostream>
 #include "Student.h"
 
-const char* Student::GetStudentName() const
+char* const Student::GetStudentName() const
 {
+	std::cout <<"Method"<<std::endl <<&name << std::endl;
 	return name;
 }
 
