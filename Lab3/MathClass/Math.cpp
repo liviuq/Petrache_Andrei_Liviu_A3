@@ -119,7 +119,7 @@ char* Math::Mul(const char* str, int number)
 		strcpy(resultTemp, str);
 		return resultTemp; //deallocate
 	}
-
+	//FA CU PUTERI
 	char* result = new char[300];
 	strcpy(result, "\0");
 
