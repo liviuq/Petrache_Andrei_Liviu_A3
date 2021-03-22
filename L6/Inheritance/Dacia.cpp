@@ -1,5 +1,4 @@
 #include "Dacia.h"
-
 void Dacia::setAverageSpeed(int speed)
 {
 	std::cout << "yes";

@@ -1,11 +1,13 @@
 #include "Circuit.h"
-
 using namespace std;
 
 Circuit::~Circuit()
 {
-	if (participants != nullptr)
+	if(participants != nullptr)
 	{
+		//delete[] participants;
+		for (int i = 0; i < numberOfParticipants; i++)
+			delete[] participants[i];
 		delete[] participants;
 		participants = nullptr;
 	}
@@ -13,20 +15,26 @@ Circuit::~Circuit()
 	length = laps = numberOfParticipants = 0;
 }
 
-//Circuit::Circuit(const Circuit& circuitToCopy)
-//{
-//	length = circuitToCopy.length;
-//	laps = circuitToCopy.laps;
-//	weatherToRace = circuitToCopy.weatherToRace;
-//	numberOfParticipants = circuitToCopy.numberOfParticipants;
-//	delete[] participants;
-//	participants = new Car[numberOfParticipants];
-//
-//}
-//
+Circuit::Circuit(const Circuit& circuitToCopy)
+{
+	length = circuitToCopy.length;
+	laps = circuitToCopy.laps;
+	weatherToRace = circuitToCopy.weatherToRace;
+	numberOfParticipants = circuitToCopy.numberOfParticipants;
+	participants = new Car* [numberOfParticipants];
+	for(int i = 0; i < numberOfParticipants; i++)
+		participants[i] = circuitToCopy.participants[i];
+	participants = circuitToCopy.participants;
+}
+
 //Circuit::Circuit(const Circuit&& circuitToMove)
 //{
-//
+//	length = circuitToMove.length;
+//	laps = circuitToMove.laps;
+//	weatherToRace = circuitToMove.weatherToRace;
+//	numberOfParticipants = circuitToMove.numberOfParticipants;
+//	participants = circuitToMove.participants;
+//	delete[] circuitToMove.participants;
 //}
 
 void Circuit::SetLength(int length)
@@ -58,8 +66,6 @@ void Circuit::AddCar(Car* car)
 		participants = new Car * [numberOfParticipants];
 		for (int i = 0; i < numberOfParticipants; i++)
 			participants[i] = temp[i];
-		
-		//for (int i = 0; i < numberOfParticipants; i++)
 		delete[] temp;
 	}
 }
@@ -71,10 +77,12 @@ void Circuit::race()
 
 void Circuit::showFinalRanks()
 {
+
 }
 
 void Circuit::showWhoDidNotFinish()
 {
+
 }
 
 void Circuit::Print()
@@ -82,4 +90,11 @@ void Circuit::Print()
 	cout << "Nr of participants = " << numberOfParticipants << endl;
 	for (int i = 0; i < numberOfParticipants; i++)
 		cout << participants[i] << endl;
+}
+
+void Print(Circuit circuit)
+{
+	cout << "Nr of participants = " << circuit.numberOfParticipants << endl;
+	for (int i = 0; i < circuit.numberOfParticipants; i++)
+		cout << circuit.participants[i] << endl;
 }

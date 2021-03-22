@@ -8,6 +8,7 @@ using namespace std;
 int main()
 {
 	Circuit c;
+	cout <<"XXXXXXXX " <<  &c << endl;
 	c.SetLength(100);
 	c.SetWeather(Weather::Rain);
 	c.Print();
@@ -15,6 +16,13 @@ int main()
 	c.Print();
 	c.AddCar(new Dacia());
 	c.Print();
+	//Circuit c2 = c;
+	//cout << &c2 << endl;
+	//c2.Print();
+	//c2.AddCar(new Dacia());
+	//c2.AddCar(new Dacia());
+	//c2.Print();
+	//cout <<"XXXXXXXX "<< &c << " " << &c2 << endl;
 	//c.AddCar(new Toyota());
 	//c.AddCar(new Mercedes());
 	//c.AddCar(new Ford());

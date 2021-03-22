@@ -26,6 +26,9 @@ public:
 		participants(nullptr),
 		numberOfParticipants(0) {}
 	~Circuit();
+	Circuit(const Circuit& circuitToCopy);
+	//Circuit operator=(Circuit c);
+	//Circuit(const Circuit&& circuitToMove);
 	void SetLength(int lenght);
 	void SetWeather(Weather weatherToSet);
 	void AddCar(Car* car);
@@ -33,6 +36,7 @@ public:
 	void showFinalRanks();
 	void showWhoDidNotFinish();
 	void Print();
+	friend void Print(Circuit circuit);
 };
 
 	
