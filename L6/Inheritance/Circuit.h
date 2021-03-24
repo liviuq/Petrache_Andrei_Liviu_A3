@@ -11,14 +11,17 @@ private:
 	int laps;
 	int weatherToRace;
 	Car** participants;
+	Car* didNotFinish[10] = { nullptr };
 	int numberOfParticipants;
+	int numberOfParticipantsNotFinish = 0;
 public:
-	Circuit() : 
-		length(0), 
+	Circuit() :
+		length(0),
 		laps(0),
 		weatherToRace((int)(Weather::Sunny)),
 		participants(nullptr),
-		numberOfParticipants(0)	{}
+		numberOfParticipants(0)
+	{}
 	Circuit(int lengthToRace, int nrLaps, Weather weather) :
 		length(lengthToRace),
 		laps(nrLaps),
@@ -26,8 +29,8 @@ public:
 		participants(nullptr),
 		numberOfParticipants(0) {}
 	~Circuit();
-	Circuit(const Circuit& circuitToCopy);
-	//Circuit operator=(Circuit c);
+	//Circuit(const Circuit& circuitToCopy);
+	//Circuit& operator=(Circuit& c);
 	//Circuit(const Circuit&& circuitToMove);
 	void SetLength(int lenght);
 	void SetWeather(Weather weatherToSet);
@@ -35,8 +38,7 @@ public:
 	void race();
 	void showFinalRanks();
 	void showWhoDidNotFinish();
-	void Print();
-	friend void Print(Circuit circuit);
+	void PrintAllCars();
 };
 
 	

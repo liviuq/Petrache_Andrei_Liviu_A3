@@ -15,17 +15,24 @@ Circuit::~Circuit()
 	length = laps = numberOfParticipants = 0;
 }
 
-Circuit::Circuit(const Circuit& circuitToCopy)
-{
-	length = circuitToCopy.length;
-	laps = circuitToCopy.laps;
-	weatherToRace = circuitToCopy.weatherToRace;
-	numberOfParticipants = circuitToCopy.numberOfParticipants;
-	participants = new Car* [numberOfParticipants];
-	for(int i = 0; i < numberOfParticipants; i++)
-		participants[i] = circuitToCopy.participants[i];
-	participants = circuitToCopy.participants;
-}
+//Circuit::Circuit(const Circuit& circuitToCopy)
+//{
+//	length = circuitToCopy.length;
+//	laps = circuitToCopy.laps;
+//	weatherToRace = circuitToCopy.weatherToRace;
+//	numberOfParticipants = circuitToCopy.numberOfParticipants;
+//	participants = new Car* [numberOfParticipants];
+//	for(int i = 0; i < numberOfParticipants; i++)
+//		participants[i] = circuitToCopy.participants[i];
+//	participants = circuitToCopy.participants;
+//}
+
+//Circuit& Circuit::operator=(Circuit& c)
+//{
+//
+//
+//	return (*this);
+//}
 
 //Circuit::Circuit(const Circuit&& circuitToMove)
 //{
@@ -72,29 +79,50 @@ void Circuit::AddCar(Car* car)
 
 void Circuit::race()
 {
-
+	for (int i = 0; i < length; i++)
+	{
+		for (int j = 0; j < numberOfParticipants; j++)
+		{
+			if (participants[i]->getCapacity() > 0)
+			{
+				participants[i]->setFuelCapacity(participants[i]->getCapacity() - participants[i]->getConsumption());
+			}
+			else
+			{
+				if (i < length && participants[j]->getFinish())
+				{
+					participants[j]->setFinish(false);
+					didNotFinish[numberOfParticipantsNotFinish++] = participants[j];
+				}
+			}
+		}
+	}
 }
 
 void Circuit::showFinalRanks()
 {
-
+	cout << "FINNISHERS:" << endl;
+	for (int i = 0; i < numberOfParticipants - numberOfParticipantsNotFinish; i++)
+	{
+		participants[i]->Print();
+	}
+	cout << "LOOSERS:" << endl;
+	for (int i = 0; i < numberOfParticipantsNotFinish; i++)
+	{
+		didNotFinish[i]->Print();
+	}
 }
 
 void Circuit::showWhoDidNotFinish()
 {
-
+	for (int i = 0; i < numberOfParticipantsNotFinish; i++)
+	{
+		didNotFinish[i]->Print();
+	}
 }
 
-void Circuit::Print()
+void Circuit::PrintAllCars()
 {
-	cout << "Nr of participants = " << numberOfParticipants << endl;
 	for (int i = 0; i < numberOfParticipants; i++)
-		cout << participants[i] << endl;
-}
-
-void Print(Circuit circuit)
-{
-	cout << "Nr of participants = " << circuit.numberOfParticipants << endl;
-	for (int i = 0; i < circuit.numberOfParticipants; i++)
-		cout << circuit.participants[i] << endl;
+		participants[i]->Print();
 }
