@@ -143,6 +143,21 @@ inline bool Map<K, V>::Delete(const K thisKey)
 }
 
 template<class K, class V>
+bool Map<K, V>::Includes( const Map<K, V>& thisMap)
+{
+	if (this->count < thisMap.count)
+		return false;
+	for (int i = 0; i < thisMap.count; i++)
+	{
+		for (int j = 0; j < thisMap.count; j++)
+		{
+			if (this->myMap[j].key != thisMap[i].key)
+				return false;
+		}
+	}
+}
+
+template<class K, class V>
 inline void Map<K, V>::print()
 {
 	for (int i = 0; i < count; i++)
