@@ -2,7 +2,7 @@
 // Created by andrew on 19.05.2021.
 // I have to see how the includes work with CLion
 //
-
+//
 #ifndef L12CRED_CONTACT_H
 #define L12CRED_CONTACT_H
 

@@ -88,6 +88,8 @@ StyleCopReport.xml
 *.svclog
 *.scc
 
+#CLion stuff
+CMakeLists.txt
 # Chutzpah Test files
 _Chutzpah*
 
