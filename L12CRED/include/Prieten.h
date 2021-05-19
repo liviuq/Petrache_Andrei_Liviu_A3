@@ -7,7 +7,7 @@
 
 #include "Contact.h"
 
-class Prieten: public Contact
+class Prieten final: public Contact
 {
 
 private:

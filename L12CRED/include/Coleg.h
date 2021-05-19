@@ -7,7 +7,7 @@
 
 #include "Contact.h"
 
-class Coleg: public Contact
+class Coleg final: public Contact
 {
 private:
 	std::string serviciu;
