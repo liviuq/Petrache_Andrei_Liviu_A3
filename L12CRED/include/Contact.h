@@ -5,13 +5,15 @@
 #ifndef L12CRED_CONTACT_H
 #define L12CRED_CONTACT_H
 
+#include <iostream>
+
 class Contact
 {
 private:
 	mutable std::string name;
 
 public:
-	virtual std::string getNume();
+	virtual std::string getNume()
 	{
 		return name;
 	}

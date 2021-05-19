@@ -4,30 +4,30 @@
 
 #include "../include/Cunoscut.h"
 
-std::string Prieten::getAdresa()
+std::string Cunoscut::getAdresa()
 {
 	std::string tempo = "whoops";
 	return tempo;
 }
 
-std::string Prieten::getNrTelefon()
+std::string Cunoscut::getNrTelefon()
 {
 	return nr_telefon;
 }
 
-std::string Prieten::getServiciu()
+std::string Cunoscut::getServiciu()
 {
 	std::string tempo = "whoops";
 	return tempo;
 }
 
-std::string Prieten::getDataNasterii()
+std::string Cunoscut::getDataNasterii()
 {
 	std::string tempo = "whoops";
 	return tempo;
 }
 
-std::string Prieten::getType()
+std::string Cunoscut::getType()
 {
 	std::string tempo = "whoops";
 	return tempo;
