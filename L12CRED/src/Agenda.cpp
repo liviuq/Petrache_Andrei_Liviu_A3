@@ -32,8 +32,14 @@ Contact *Agenda::Cauta(std::string deCautat)
 	return nullptr;
 }
 
-std::vector<Prieten*> Agenda::getPrieteni()
+std::vector<Contact*> Agenda::getPrieteni()
 {
-
+	std::vector<Contact*> temp;
+	for(int i = 0; i < contacte.size(); i++)
+	{
+		if( contacte[i]->getType() == tipContact::Prieten)
+			temp.push_back(contacte[i]);
+	}
+	return temp;
 }
 

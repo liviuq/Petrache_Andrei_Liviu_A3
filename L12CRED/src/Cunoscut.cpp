@@ -27,9 +27,8 @@ std::string Cunoscut::getDataNasterii()
 	return tempo;
 }
 
-std::string Cunoscut::getType()
+tipContact Cunoscut::getType()
 {
-	std::string tempo = "whoops";
-	return tempo;
+	return tipContact::Cunoscut;
 }
 

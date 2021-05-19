@@ -25,8 +25,7 @@ std::string Coleg::getDataNasterii()
 	return tempo;
 }
 
-std::string Coleg::getType()
+tipContact Coleg::getType()
 {
-	std::string tempo = "whoops";
-	return tempo;
+	return tipContact::Coleg;
 }

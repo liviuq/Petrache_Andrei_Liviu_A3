@@ -22,11 +22,11 @@ public:
 			serviciu(_serviciu),
 			nr_telefon(_nr_telefon),
 			adresa(_adresa) {}
-	std::string getAdresa();
-	std::string getNrTelefon();
-	std::string getServiciu();
-	std::string getDataNasterii();
-	std::string getType();
+	std::string getAdresa() override final;
+	std::string getNrTelefon() override final;
+	std::string getServiciu() override final;
+	std::string getDataNasterii() override final;
+	tipContact getType() override final;
 };
 
 #endif //L12CRED_COLEG_H

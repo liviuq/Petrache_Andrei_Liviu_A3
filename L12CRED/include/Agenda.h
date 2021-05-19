@@ -19,7 +19,7 @@ public:
 	void Adauga( Contact* contactNou);
 	void Sterge(std::string deSters);
 	Contact* Cauta( std::string deCautat);
-	std::vector<Prieten*> getPrieteni();
+	std::vector<Contact*> getPrieteni();
 };
 
 #endif //L12CRED_AGENDA_H

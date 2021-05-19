@@ -25,8 +25,7 @@ std::string Prieten::getDataNasterii()
 	return data_nasterii;
 }
 
-std::string Prieten::getType()
+tipContact Prieten::getType()
 {
-	std::string tempo = "whoops";
-	return tempo;
+	return tipContact::Prieten;
 }
