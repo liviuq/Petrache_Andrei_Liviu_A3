@@ -2,17 +2,14 @@
 // Created by andrew on 19.05.2021.
 //
 
-#ifndef L12CRED_PRIETEN_H
-#define L12CRED_PRIETEN_H
+#ifndef L12CRED_CUNOSCUT_H
+#define L12CRED_CUNOSCUT_H
 
 #include "Contact.h"
 
-class Prieten: private Contact
+class Cunoscut: private Contact
 {
-
 private:
-	std::string data_nasterii;
-	std::string adresa;
 	std::string nr_telefon;
 
 public:
@@ -23,4 +20,4 @@ public:
 	std::string getType();
 };
 
-#endif //L12CRED_PRIETEN_H
+#endif //L12CRED_CUNOSCUT_H
