@@ -7,12 +7,16 @@
 
 #include "Contact.h"
 
-class Cunoscut: private Contact
+class Cunoscut: public Contact
 {
 private:
 	std::string nr_telefon;
 
 public:
+	Cunoscut(std::string _nume,
+		     std::string _nr_telefon):
+				Contact(_nume),
+				nr_telefon(_nr_telefon) {}
 	std::string getAdresa();
 	std::string getNrTelefon();
 	std::string getServiciu();

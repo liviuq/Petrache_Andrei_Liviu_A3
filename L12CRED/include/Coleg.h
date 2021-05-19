@@ -7,13 +7,21 @@
 
 #include "Contact.h"
 
-class Coleg: private Contact
+class Coleg: public Contact
 {
 private:
 	std::string serviciu;
 	std::string nr_telefon;
 	std::string adresa;
 public:
+	Coleg(std::string _nume,
+	      std::string _serviciu,
+	      std::string _nr_telefon,
+	      std::string _adresa):
+			Contact(_nume),
+			serviciu(_serviciu),
+			nr_telefon(_nr_telefon),
+			adresa(_adresa) {}
 	std::string getAdresa();
 	std::string getNrTelefon();
 	std::string getServiciu();

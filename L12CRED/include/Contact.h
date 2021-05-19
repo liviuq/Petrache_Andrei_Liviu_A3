@@ -7,12 +7,21 @@
 
 #include <iostream>
 
+enum tipContact
+{
+	Prieten,
+	Coleg,
+	Cunoscut
+};
+
 class Contact
 {
 private:
 	mutable std::string name;
 
 public:
+	Contact(std::string _name): name(_name){}
+
 	virtual std::string getNume()
 	{
 		return name;
@@ -21,7 +30,7 @@ public:
 	virtual std::string getNrTelefon() = 0;
 	virtual std::string getServiciu() = 0;
 	virtual std::string getDataNasterii() = 0;
-	virtual std::string getType() = 0;
+	virtual tipContact getType() = 0;
 };
 
 #endif //L12CRED_CONTACT_H
