@@ -27,5 +27,5 @@ std::string Coleg::getDataNasterii()
 
 tipContact Coleg::getType()
 {
-	return tipContact::Coleg;
+	return tipContact::_Coleg;
 }

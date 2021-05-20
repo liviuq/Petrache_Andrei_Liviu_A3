@@ -29,6 +29,6 @@ std::string Cunoscut::getDataNasterii()
 
 tipContact Cunoscut::getType()
 {
-	return tipContact::Cunoscut;
+	return tipContact::_Cunoscut;
 }
 

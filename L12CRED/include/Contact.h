@@ -10,9 +10,9 @@
 
 enum tipContact
 {
-	Prieten,
-	Coleg,
-	Cunoscut
+	_Prieten,
+	_Coleg,
+	_Cunoscut
 };
 
 class Contact

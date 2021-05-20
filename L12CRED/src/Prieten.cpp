@@ -27,5 +27,5 @@ std::string Prieten::getDataNasterii()
 
 tipContact Prieten::getType()
 {
-	return tipContact::Prieten;
+	return tipContact::_Prieten;
 }

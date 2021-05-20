@@ -10,8 +10,8 @@
 int main()
 {
 	Agenda myAgenda;
-
-	myAgenda.Adauga( new class Prieten("Andrew", "06/21/1999", "Iasi", "0770000000"));
+	Prieten myFriend("andrew", "55555", "123455", "000000");
+	myAgenda.Adauga( new Prieten("Andrew", "*insert date here *", "Somewhere in Europe", "0770000000"));
 	std::vector<Contact*> myArray;
 	myArray = myAgenda.getPrieteni();
 	std::cout << myArray[0]->getNume();
