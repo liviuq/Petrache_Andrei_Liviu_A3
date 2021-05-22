@@ -65,5 +65,7 @@ int main()
 
 	//Close the file
     fileToRead.close();
+
+	std::cin.get();
 	return EXIT_SUCCESS;
 }
