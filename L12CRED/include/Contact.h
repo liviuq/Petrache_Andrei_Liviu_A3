@@ -18,7 +18,7 @@ enum tipContact
 class Contact
 {
 private:
-	mutable std::string name;
+	std::string name;
 
 public:
 	Contact(std::string _name): name(_name){}

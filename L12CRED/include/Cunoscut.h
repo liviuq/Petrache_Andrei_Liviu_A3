@@ -9,6 +9,7 @@
 
 class Cunoscut final: public Contact
 {
+
 private:
 	std::string nr_telefon;
 
