@@ -40,9 +40,10 @@ public:
 
 	//here the operators should be located
 	int operator+ (const myClass& current);
-	//friend int operator+ (const myClass& a, const myClass& b);
+	myClass operator> (const myClass& _myClass);
+	int operator! ();
 
-
+	myClass& operator= (myClass&& tempClass);
 };
 
 

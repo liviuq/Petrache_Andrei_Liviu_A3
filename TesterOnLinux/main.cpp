@@ -20,5 +20,13 @@ int main()
 
 	myClass r  = myClass::test(q);
 	r.print();
+
+	(m > n).print();
+
+	std::cout << !p << std::endl;
+
+	myClass* ptr = new myClass(100,200,"with new operator");
+	ptr->print();
+	delete ptr;
 	return 0;
 }

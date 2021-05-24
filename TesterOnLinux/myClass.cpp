@@ -73,6 +73,34 @@ myClass myClass::test(myClass d)
 	return d;
 }
 
+myClass myClass::operator>(const myClass &_myClass)
+{
+	myClass temp(this->x, _myClass.y, "combined");
+	return temp;
+}
+
+int myClass::operator!()
+{
+	return this->x % 10;
+}
+
+myClass &myClass::operator=(myClass &&tempClass)
+{
+	std::cout << "in assign operator" << std::endl;
+
+	if(this != &tempClass)
+	{
+		this->x = tempClass.x;
+		this->y = tempClass.y;
+		this->myString = tempClass.myString;
+
+		//release the data
+		tempClass.myString = nullptr;
+	}
+
+	return (*this);
+}
+
 
 
 
