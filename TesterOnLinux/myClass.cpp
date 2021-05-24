@@ -6,12 +6,16 @@
 
 #include "myClass.h"
 
-void myClass::setString(std::string& string)
+void myClass::setString(const char* _string)
 {
-	this->myString = string;
+	int temp = strlen(_string);
+	delete[] myString;
+	myString = new char[temp + 1];
+	strcpy(myString, _string);
+	myString[temp] = '\0';
 }
 
-std::string &myClass::getString()
+const char* myClass::getString()
 {
 	return myString;
 }
@@ -32,3 +36,5 @@ void myClass::setValues(int _x, int _y)
 	this->x = _x;
 	this->y = _y;
 }
+
+
