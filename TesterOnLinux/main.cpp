@@ -15,5 +15,10 @@ int main()
 	myClass p(6,7, "p is a cool letter");
 	std::cout << (m + n) << std::endl;
 
+	myClass q = myClass(10,11, "Salutare");
+	q.print();
+
+	myClass r  = myClass::test(q);
+	r.print();
 	return 0;
 }

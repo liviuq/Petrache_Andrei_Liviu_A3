@@ -11,12 +11,13 @@ class myClass
 {
 private:
 	int x,y;
-	char*  myString;
+	char* myString = nullptr;
+
 public:
 	myClass(int _x, int _y, const char* _myString):
 			x(_x), y(_y)
 	{
-		int temp = strlen(_myString);
+		int temp = (int)strlen(_myString);
 		myString = new char[ temp + 1];
 		strcpy(myString, _myString);
 		myString[temp] = '\0';
@@ -26,16 +27,21 @@ public:
 
 	~myClass(){ x = y = 0; delete[] myString; myString = nullptr;}
 
-	//myClass(const myClass& toCopy);
-	//myClass(const myClass&& toMove);
+	myClass(const myClass& toCopy);
+	myClass(myClass&& toMove) noexcept;
 
 	void setValues(int _x, int _y);
 	void setString(const char* _string);
 	const char* getString();
 	void print();
 
+	//test to see the move ctor
+	static myClass test(myClass d);
+
 	//here the operators should be located
 	int operator+ (const myClass& current);
+	//friend int operator+ (const myClass& a, const myClass& b);
+
 
 };
 
