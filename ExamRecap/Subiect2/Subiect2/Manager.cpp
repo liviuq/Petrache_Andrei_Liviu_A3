@@ -6,6 +6,7 @@ void Manager::Lucreaza()
     for (auto i : echipa)
     {
         std::cout << "C++" << std::endl <<"[" << i->GetNume() << "]:" << std::endl;
+        //std::cout << ((Programator*)i)->GetCode() << std::endl; 
         i->Lucreaza();
     }
 }
